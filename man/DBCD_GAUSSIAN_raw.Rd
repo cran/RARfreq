@@ -7,14 +7,13 @@
 DBCD_GAUSSIAN_raw(X.df, group_allo, rho_func_index, rho_func, alpha)
 }
 \arguments{
-\item{X.df}{A data frame of two columns: treatment arm and response value.
-treatment arm.}
+\item{X.df}{A data frame of two columns: treatment arm and response value.}
 
 \item{group_allo}{An integer of the size of group allocation. The default is
 1.}
 
 \item{rho_func_index}{Supply a number of 1, 2 or 3 indicting the
-allocation function to use.
+allocation function to use. (TODO: add reference)
 1 = Zhang-Rosenberger allocation;
 2 = Neyman allocation.
 The default is 2.}
@@ -23,7 +22,7 @@ The default is 2.}
 SD_RK when rho_func_index is NULL. Default is NULL.}
 
 \item{alpha}{Supply a number indicating the subscripts of the probability
-function. The default is 2.}
+function. The default is 2. \insertCite{huAsymptoticPropertiesDoubly2004}{RARfreq}}
 }
 \value{
 Number of the arm that the next subject is assigned to.
@@ -44,4 +43,7 @@ RESPONSE = rnorm(50)
 
 DBCD_GAUSSIAN_raw(X.df)
 
+}
+\references{
+\insertAllCited{}
 }

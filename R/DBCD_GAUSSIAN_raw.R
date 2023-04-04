@@ -6,26 +6,29 @@
 #' @usage DBCD_GAUSSIAN_raw(X.df, group_allo, rho_func_index, rho_func, alpha)
 #'
 #' @param X.df A data frame of two columns: treatment arm and response value.
-#' treatment arm.
 #' @param group_allo An integer of the size of group allocation. The default is
 #' 1.
 #' @param rho_func_index Supply a number of 1, 2 or 3 indicting the
-#' allocation function to use.
+#' allocation function to use. (TODO: add reference)
 #' 1 = Zhang-Rosenberger allocation;
 #' 2 = Neyman allocation.
 #' The default is 2.
 #' @param rho_func Supply a user-specified allocation function of Mean_RK and
 #' SD_RK when rho_func_index is NULL. Default is NULL.
 #' @param alpha Supply a number indicating the subscripts of the probability
-#' function. The default is 2.
+#' function. The default is 2. \insertCite{huAsymptoticPropertiesDoubly2004}{RARfreq}
 #'
 #'
 #' @importFrom magrittr "%>%"
 #' @importFrom stats na.omit
 #' @import dplyr
+#' @importFrom Rdpack reprompt
 #'
 #' @details 'DBCD_GAUSSIAN' assigns the next subject to a group given the observed
 #' success rates, enrolled subjects and allocation function.
+#'
+#' @references
+#' \insertAllCited{}
 #'
 #' @return Number of the arm that the next subject is assigned to.
 #' @export

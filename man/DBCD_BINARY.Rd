@@ -17,7 +17,7 @@ must be the same as `S_RK`.}
 
 \item{rho_func_index}{Supply a number of 1, 2 or 3 indicting the
 allocation function to use.
-1 = Wei's allocation
+1 = Wei's allocation;
 2 = Neyman allocation;
 3 = Rosenberger allocation.
 The default is 3.}
@@ -33,7 +33,7 @@ Number of the arm that the next subject is assigned to.
 }
 \description{
 Allocates patients to one of treatments based on doubly adaptive
-biased coin design on summarized data.
+biased coin design on summary level data.
 }
 \details{
 'DBCD_BINARY' assigns the next subject to a group given the observed
@@ -45,15 +45,15 @@ success rates, enrolled subjects and allocation function.
 # The following command returns the number of arm that the next patient will
 # be assigned to.
 DBCD_BINARY(S_RK = c(0.4, 0.28, 0.6),
-N_RK = c(25, 25, 25),
-rho_func_index = 3, alpha=2)
+            N_RK = c(25, 25, 25),
+            rho_func_index = 3, alpha=2)
 
 # Urn allocation
 DBCD_BINARY(S_RK = c(0.4, 0.3),
-N_RK = c(25, 25),
-group_allo = 1,
-rho_func_index = NULL,
-rho_func = function(x) rev(1-x)/sum(1-x),
-alpha=2)
+            N_RK = c(25, 25),
+            group_allo = 1,
+            rho_func_index = NULL,
+            rho_func = function(x) rev(1-x)/sum(1-x),
+            alpha=2)
 
 }

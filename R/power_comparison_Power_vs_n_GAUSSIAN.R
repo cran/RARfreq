@@ -8,9 +8,9 @@
 #' nstop_mat, replication, group_allo, rho_func_index, rho_func, alpha,
 #' sig_level)
 #'
-#' @param n_seq A sequence of settings' number of patients.
+#' @param n_seq A sequence of numbers of patients.
 #' The default is c(50, 100, 150, 200).
-#' @param nstart_seq burn-in sample size of each arm. The default is n_seq/20.
+#' @param nstart_seq burn-in sample size of each arm. If NULL, n_seq/20 will be used.
 #' @param mu A vector of mean response for each treatment arm
 #' (where the first element refers to the control arm).
 #' The length of mu should correspond to the number of arms.

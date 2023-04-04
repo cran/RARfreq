@@ -2,15 +2,15 @@
 #' Methods (Binary Responses)
 #'
 #' Compares the power of tests under different sample sizes for the same
-#' treatment effects and design through matrices and plots.
+#' treatment effect and design through matrices and plots.
 #'
 #' @usage power_comparison_Power_vs_n(n_seq, nstart_seq, p, nstop_mat,
 #' replication, group_allo, rho_func_index, rho_func, alpha, sig_level)
 #'
-#' @param n_seq A sequence of settings' number of patients.
+#' @param n_seq A sequence of numbers of patients.
 #' The default is c(50, 100, 150, 200).
-#' @param nstart_seq The burn-in sample size of each arm. The default is
-#' n_seq/20 = c(2, 5, 8, 10).
+#' @param nstart_seq The burn-in sample size of each arm. If NULL, n_seq/20
+#' will be used.
 #' @param p A vector of probabilities containing probabilities
 #' for each treatment arm (where the first element refers to the control arm).
 #' The length of p should correspond to the number of treatment arms.
@@ -47,9 +47,9 @@
 #' @return
 #' \itemize{
 #'   \item Allocation - Average and standard deviation (SD) of allocation distribution
-#'   \item Estimation - Average and standard deviation of treatment effect
+#'   \item Estimation - Average and standard deviation of the estimators of treatment effect
 #'   \item Power_chisq - Average power of Chi-square test
-#'   \item Power_oneside - Average power of one-sided Welch T-test performed for each of the k-th arm against H0: p_1>p_k without multiplicity adjustment
+#'   \item Power_oneside - Average power of one-sided Welch T-test performed for each of the k-th arm against $H_0: p_1>p_k$ without multiplicity adjustment
 #'   \item Plot - Four figures of results: 1) Allocation mean and SD, 2) Estimated mean response and SD, 3) Power of Chi-square test, 4) Power of one-sided proportion test
 #' }
 #'
