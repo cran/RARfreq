@@ -33,3 +33,4 @@ library(RARfreq)
 build()
 build(binary = T, vignettes = T, manual = T)
 ```
+
